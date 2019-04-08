@@ -22,8 +22,8 @@ void Rifle::setAngle(float angle)
 
 void Rifle::draw() const
 {
-	assert(angle >= ANGLE_MIN);
-	assert(angle <= ANGLE_MAX);
+	//assert(angle >= ANGLE_MIN);
+	//assert(angle <= ANGLE_MAX);
 
 	drawRect(point, RIFLE_WIDTH, RIFLE_HEIGHT, 90 - angle);
 }
@@ -32,9 +32,19 @@ void Rifle::moveLeft()
 {
 	setAngle(angle -= RIFLE_MOVE_AMOUNT);
 
-	if (angle < ANGLE_MIN)
+	if (isPlayer1)
 	{
-		setAngle(ANGLE_MIN);
+		if (angle < ANGLE_MIN)
+		{
+			setAngle(ANGLE_MIN);
+		}
+	}
+	else
+	{
+		if (angle < ANGLE_MIN_PLAYER2)
+		{
+			setAngle(ANGLE_MIN_PLAYER2);
+		}
 	}
 }
 
@@ -43,8 +53,18 @@ void Rifle::moveRight()
 {
 	setAngle(angle += RIFLE_MOVE_AMOUNT);
 
-	if (angle > ANGLE_MAX)
+	if (isPlayer1)
 	{
-		setAngle(ANGLE_MAX);
+		if (angle > ANGLE_MAX)
+		{
+			setAngle(ANGLE_MAX);
+		}
+	}
+	else
+	{
+		if (angle > ANGLE_MAX_PLAYER2)
+		{
+			setAngle(ANGLE_MAX_PLAYER2);
+		}
 	}
 }

@@ -174,6 +174,7 @@ void Interface::keyEvent(int key, bool fDown)
 		break;
 	case GLUT_KEY_HOME:
 	case ' ':
+		//printf("Pressed Space\n");
 		isSpacePress = fDown;
 		break;
 	}

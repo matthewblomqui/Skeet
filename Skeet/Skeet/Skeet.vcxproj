@@ -135,6 +135,7 @@
     <ClInclude Include="rifle.h" />
     <ClInclude Include="uiDraw.h" />
     <ClInclude Include="uiInteract.h" />
+    <ClInclude Include="variables.h" />
     <ClInclude Include="velocity.h" />
   </ItemGroup>
   <ItemGroup>

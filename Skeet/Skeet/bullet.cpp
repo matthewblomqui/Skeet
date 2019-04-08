@@ -25,8 +25,15 @@ using namespace std;
 Bullet::Bullet()
 {
 	setPoint(Point(200, -200));
-	point = getPoint();
-	angle = 60.0;
+	//point = getPoint();
+	//angle = 60.0;
+	alive = true;
+}
+
+Bullet::Bullet(Point point)
+{
+	setPoint(point);
+	//angle = -45.0;
 	alive = true;
 }
 
@@ -74,7 +81,7 @@ void Bullet::draw()
 	drawPokeball(point, 2, 1.0, 1.0, 1.0);
 }
 
-void Bullet::fire(Point point, float angle)
+void Bullet::fire(/*Point point, */float angle)
 {
 	float dx = BULLET_SPEED * (cos(M_PI / 180.0 * angle));
 	float dy = BULLET_SPEED * (sin(M_PI / 180.0 * angle));

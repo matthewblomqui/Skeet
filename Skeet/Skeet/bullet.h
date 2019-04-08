@@ -20,6 +20,7 @@ private:
 	bool alive;
 public:
 	Bullet();
+	Bullet(Point point);
 	Point getPoint();
 	Velocity getVelocity();
 	bool isAlive();
@@ -28,7 +29,7 @@ public:
 	void kill();
 	void advance();
 	void draw();
-	void fire(Point point, float angle);
+	void fire(/*Point point, */float angle);
 };
 
 #define CLOSE_ENOUGH 15

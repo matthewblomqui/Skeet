@@ -26,7 +26,7 @@ using namespace std;
  * GAME CONSTRUCTOR
  ***************************************/
 Game::Game(Point tl, Point br)
-	: topLeft(tl), bottomRight(br), rifle(br)
+	: topLeft(tl), bottomRight(br), rifle(br), rifle2(Point(200,200), -45)
 {
 	// Set up the initial conditions of the game
 	score = 0;
@@ -247,21 +247,35 @@ void Game::handleInput(const Interface & ui)
 	// Change the direction of the rifle
 	if (ui.isLeft())
 	{
+		printf("Moved Left\n");
+		printf("Angle: %f\n", rifle.getAngle());
 		rifle.moveLeft();
+		rifle2.moveLeft();
 	}
 
 	if (ui.isRight())
 	{
+		printf("Moved Right\n");
+		printf("Angle: %f\n", rifle.getAngle());
 		rifle.moveRight();
+		rifle2.moveRight();
 	}
 
 	// Check for "Spacebar
 	if (ui.isSpace())
 	{
-		Bullet newBullet;
-		newBullet.fire(rifle.getPoint(), rifle.getAngle());
+		printf("Pressed Space\n");
 
+		Bullet newBullet;
+		Bullet newBullet2;
+
+		newBullet2.setPoint(rifle2.getPoint());
+
+		newBullet.fire(/*rifle.getPoint(), */rifle.getAngle());
 		bullets.push_back(newBullet);
+
+		newBullet2.fire(/*rifle2.getPoint(), */rifle2.getAngle());
+		bullets.push_back(newBullet2);	
 	}
 }
 
@@ -286,6 +300,7 @@ void Game::draw(const Interface & ui)
 
 	// draw the rifle
 	rifle.draw();
+	rifle2.draw();
 
 	// draw the bullets, if they are alive
 	for (int i = 0; i < bullets.size(); i++)

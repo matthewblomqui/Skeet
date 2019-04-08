@@ -68,7 +68,9 @@ private:
 	int score;
 
 	Rifle rifle;
+	Rifle rifle2;
 	std::vector<Bullet> bullets;
+	std::vector<Bullet> bullets2;
 
 	// TODO: declare your bird here (e.g., "Bird * bird;")
 	Bird * bird;

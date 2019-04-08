@@ -42,6 +42,9 @@
     <ClInclude Include="velocity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="variables.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bird.cpp">

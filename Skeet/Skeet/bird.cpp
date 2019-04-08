@@ -87,7 +87,7 @@ void SacredBird::draw()
 {
 	drawSacredBird(getPoint(), 15.0);
 	drawEevee(getPoint());
-	drawLucario(Point(0,0));
+	//drawLucario(Point(0,0));
 }
 
 int SacredBird::hit()
@@ -111,7 +111,7 @@ ToughBird::ToughBird()
 void ToughBird::draw()
 {
 	drawToughBird(getPoint(), 15.0, health);
-	drawLucario(Point(0, 0));
+	//drawLucario(getPoint());
 }
 
 void ToughBird::setHealth(int health)
@@ -139,6 +139,6 @@ void StandardBird::draw()
 {
 	drawCircle(Bird::getPoint(), 15.0);
 	//drawAngryBird(getPoint());
-	drawLucario(Point(0, 0));
+	drawLucario(getPoint());
 }
 

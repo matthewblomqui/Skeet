@@ -21,12 +21,17 @@
 #define ANGLE_MIN 0
 #define ANGLE_START 45
 
+#define ANGLE_MAX_PLAYER2 0
+#define ANGLE_MIN_PLAYER2 -90
+#define ANGLE_START_PLAYER2 -45
+
 #define RIFLE_MOVE_AMOUNT 3
 
 class Rifle
 {
 private:
 	Point point;
+	bool isPlayer1;
 
 	/**********************************************************
 	 * angle - The angle of the rifles in degrees.
@@ -36,7 +41,9 @@ private:
 
 
 public:
-	Rifle(const Point & point) : point(point) { angle = ANGLE_START; }
+	Rifle(const Point & point) : point(point) { angle = ANGLE_START; isPlayer1 = true; }
+
+	Rifle(const Point & point, float angle) : point(point) { this->angle = angle; isPlayer1 = false; }
 
 	/****************
 	 * Basic Getters
