@@ -117,6 +117,9 @@
   <ItemGroup>
     <ClCompile Include="bird.cpp" />
     <ClCompile Include="bullet.cpp" />
+    <ClCompile Include="client_net.cpp" />
+    <ClCompile Include="common.cpp" />
+    <ClCompile Include="common_net.cpp" />
     <ClCompile Include="driver.cpp" />
     <ClCompile Include="flyingObjects.cpp" />
     <ClCompile Include="game.cpp" />
